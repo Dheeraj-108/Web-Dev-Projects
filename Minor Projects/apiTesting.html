@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad's Jokes</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Georgia, 'Times New Roman', Times, serif
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            border: 5px solid black;
+            border-radius: 10px;
+            background-color: aquamarine;
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            background-color:cadetblue;
+            font-size:larger;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        p {
+            width: 400px;
+            height: 200px;
+            border: 2px dashed black;
+            border-radius: 10px;
+            font-size: 25px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flash {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <h1>Dad said he's good at telling jokes?</h1>
+            <p>Lets hear it!</p>
+            <button>Tell me a Joke</button>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="apiTesting.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+</body>
+</html>
