@@ -5,6 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+           margin-top: 50px;
+           text-align: center;
+        }
+
+        .btn{
+            border-radius: 5px;
+            padding: 0px 4px 0px 4px;
+        }
+
+        input{
+            border-radius: 5px;
+            font-size: 1rem;
+            padding: 0px 4px 0px 4px;
+        }
+
+        .tasks{
+            padding: 20px 0px 20px 0px;
+            display: flex;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        li button{
+            margin-left: 10px;
+            border-radius: 5px;
+            padding: 0px 4px 0px 4px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -14,7 +58,7 @@
             <h1>Todo List Tasks</h1>
             <div>
                 <input type="text" placeholder="Enter the task name" id="input" />
-                <button id="btn">Add the Task</button>
+                <button id="btn" class="btn">Add the Task</button>
             </div>
 
             <div class="tasks">
@@ -25,7 +69,7 @@
         </div>
     </div>
 
-    <script src="/todolist.js"></script>
+    <script src="todolist.js"></script>
 </body>
 
 </html>

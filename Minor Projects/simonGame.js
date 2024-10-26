@@ -4,13 +4,17 @@ let gameLvl = 0;
 let gameBox = ['blue', 'green', 'red', 'yellow'];
 
 let newGameSeq = [];
-let gameSeq = [3,2,4,3,1,4,2,1,4,3];
+// let gameSeq = [3,2,4,3,1,4,2,1,4,3];
+let randSeq = [];
 let userSeq = [];
 
 function generatePattern(lvl) {
     let playSeq = [];
+    let randNum = 0;
     for(let i=0; i<lvl; i++) {
-        playSeq.push(gameSeq[i]);
+        randNum = Math.floor(Math.random()*4 + 1);
+        // playSeq.push(gameSeq[i]);
+        playSeq.push(randNum);
     }
     return playSeq;
 }
@@ -48,11 +52,12 @@ function levelUp() {
     } else {
         let lvlName = document.querySelector('h3');
         lvlName.innerText = `Level ${gameLvl}`;
-        for(let i=0; i<gameLvl; i++) {
-            newGameSeq.push(gameSeq[i]);
-        }
-    
+        // for(let i=0; i<gameLvl; i++) {
+        //     newGameSeq.push(gameSeq[i]);
+        // }
+        
         let pattern = generatePattern(gameLvl);
+        newGameSeq = pattern;
         setTimeout(() => {
             flashBox(pattern);
         }, 1000);
@@ -98,11 +103,6 @@ function btnPress() {
     checkSeq(userSeq.length-1);
 }
 
-let allBox = document.querySelectorAll('.box');
-for(box of allBox) {
-    box.addEventListener('click', btnPress);
-}
-
 startGame.addEventListener('click', () => {
     if(gameStart == false) {
         console.log("game started");
@@ -111,5 +111,9 @@ startGame.addEventListener('click', () => {
 
         levelUp();
 
+        let allBox = document.querySelectorAll('.box');
+        for(box of allBox) {
+            box.addEventListener('click', btnPress);
+        }
     }
 });
