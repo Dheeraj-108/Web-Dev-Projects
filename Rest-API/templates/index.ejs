@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora's Beta</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: auto;
+            min-height: 100vh;
+            background-color: burlywood
+        }
+
+        .posts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 770px;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: brown;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .post {
+            background-color: bisque;
+            border: 5px solid black;
+            margin: 5px;
+            width: 660px;
+        }
+
+        .post p {
+            font-size: 1.4rem;
+        }
+
+        .btn-post {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            width: 200px;
+            height: 30px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: rgb(16, 245, 16);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            border: 3px solid black;
+            border-radius: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .btn-delete {
+            background-color: red;
+        }
+
+        .btn-edit {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Quora Posts</h1>
+        <div class="posts">
+            <% for(let post of posts) { %>
+                <div class="post">
+                    <h3>Username: @<%= post.username %>
+                    </h3>
+                    <p>
+                        <%= post.content %>
+                    </p>
+                    <form style="display:inline" method="post"
+                        action="http://localhost:8080/posts/<%= post.id %>?_method=DELETE">
+                        <button class="btn btn-delete" href=>Delete</button>
+                    </form>
+                    <a class="btn btn-edit" href="http://localhost:8080/posts/<%= post.id %>/editpost">Edit Post</a>
+                </div>
+            <% } %>
+        </div>
+        <div class="btn-post">
+            <a href="http://localhost:8080/posts/addpost">Create Post</button>
+        </div>
+    </div>
+</body>
+
+</html>

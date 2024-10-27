@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Post</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: burlywood;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color:brown;
+        }
+
+        .container{
+            height: 60%;
+            width: 50%;
+            border: 5px solid black;
+            padding: 10px;
+            background-color:azure;
+        }
+
+        .formfield form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 2rem;
+            padding: 20px;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            background-color:cornflowerblue;
+            border-radius: 15px;
+        }
+        
+        input, textarea {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        #username {
+            width: 370px;
+            height: 30px;
+        }
+
+        #username, #content {
+            padding-left: 5px;
+            font-size: 1rem;
+        }
+
+        .btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>Quora Posts</h1>
+        <div class="container">
+            <h2>Add your Post</h1>
+            <div class="formfield">
+                <form method="post" action="http://localhost:8080/posts/<%= post.id %>?_method=PATCH">
+                    <label for="username">Enter your name:- </label>
+                    <input type="text" id="username" name="username" value="<%= post.username %>" disabled>
+
+                    <label for="content">Write your content:-</label>
+                    <textarea id="content" name="content" rows="10" cols="10"> <%= post.content %> </textarea>
+
+                    <div class="btn"><button type="submit">Update the Post</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
