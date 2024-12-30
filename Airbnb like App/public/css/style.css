@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 4rem;
+    background-color: white;
+}
+
+.navbar-collapse {
+    background-color: white;
+}
+
+.fa-hotel {
+    color: #fe424d;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    color: #222222;
+    font-weight: 500;
+}
+
+/* footer */
+.f-info {
+    display: flex;
+    flex-wrap: wrap;
+    height: 8rem;
+    background-color: #ebebeb;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials, .f-info-terms, .f-info-brand {
+    width: 100%;
+}
+
+.f-info-socials i{
+    font-size: 1.5rem;
+    margin: 0 1rem 0 1rem;
+}
+
+.f-info-terms a{
+    text-decoration: none;
+}
+
+.f-info-terms a:hover {
+    text-decoration: underline;
+}
+
+/* Card Sytling */
+.card-nobound {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem ;
+    width: 100%;
+    object-fit: cover;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.list-btn {
+    background-color: #fe424d;
+    border: none;
+}
+
+/* Show Page */
+.show-img{
+    height: 30vh;
+}
+
+.show-btn {
+    background-color: #fe424d;
+}
+
+/* Reviews */
+.review-card{
+    position: relative;
+}
+
+.review-card button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    padding: 2rem 0rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter {
+    flex-shrink: 0;
+    text-align: center;
+    margin: 0rem 1rem;
+    opacity: 0.7;
+}
+
+.filter-icons {
+    display: flex;
+    width: 60%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.scroll-btn {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.scroll-btn:focus {
+    outline: none;
+}
+
+.scroll-btn:hover {
+    background-color: #ddd;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    height: 3rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin: 0rem 2rem;
+}
+
+.imagebox {
+    border: 2.5px solid black;
+    border-radius: 2rem;
+    padding: 0.2rem;
+    width: fit-content;
+}
+
+.imagebox img {
+    border-radius: 2rem;
+}
+
+#map {
+    width: 75%;
+    height: 250px; /* Set the height to match your desired display area */
+    background-color: #eaeaea; /* Optional: Background color while the map loads */
+    /* overflow-y: hidden; */
+    margin: 1rem 0rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+

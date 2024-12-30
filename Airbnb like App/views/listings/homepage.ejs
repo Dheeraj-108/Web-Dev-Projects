@@ -1,0 +1,76 @@
+<% layout("../layouts/boilerplate.ejs"); %>
+
+    <body>
+
+        <div class="filters">
+            <button class="scroll-btn left-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <div class="filter-icons">
+                    <div class="filter">
+                        <i class="fa-solid fa-fire"></i>
+                        <p>Trending</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-bed"></i>
+                        <p>Rooms</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                        <p>Mountains</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-water"></i>
+                        <p>Arctic</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-tent"></i>
+                        <p>Camping</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                        <p>Farms</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-chess-rook"></i>
+                        <p>Castles</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-city"></i>
+                        <p>Iconic Cities</p>
+                    </div>
+                    <div class="filter">
+                        <i class="fa-solid fa-person-swimming"></i>
+                        <p>Amazing Pools</p>
+                    </div>
+                </div>
+                <button class="scroll-btn right-btn"><i class="fa-solid fa-arrow-right"></i></button>
+
+            <div class="tax-toggle">
+                <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Price Including Tax</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <% for(listing of listings) { %>
+                <a href="/listings/<%=listing._id%>/show" class="listing-link">
+                    <div class="card-nobound card listing-card" priceVal="<%=listing.price%>">
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt="..." style="height: 20rem;">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>
+                                    <%= listing.title %>
+                                </b> <br>
+                                    &#8377; <span class="price-val"><%= listing.price.toLocaleString('en-IN'); %></span> / Night
+                                    <i class="tax-info">  &nbsp; &nbsp; (18% GST Included)</i>                               
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </body>
+    
+    </html>

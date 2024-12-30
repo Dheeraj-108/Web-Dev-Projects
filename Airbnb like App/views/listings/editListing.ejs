@@ -1,0 +1,60 @@
+<% layout("../layouts/boilerplate.ejs"); %>
+
+    <body>
+        <div class="row my-4">
+            <div class="col-8 offset-2">
+                <h3 class="my-3">Edit Your Listing</h3>
+                <form method="POST" action="/listings/<%=listing._id%>/edit?_method=PUT" class="needs-validation" novalidate autocomplete="off" enctype="multipart/form-data">
+                    <div class="mb-2">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" name="listings[title]" placeholder="Enter Title"
+                            value="<%=listing.title%>" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listings[description]"
+                            class="form-control" required><%= listing.description %> </textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label for="category" class="form-label">Choose a Category:</label>
+                        <select id="category" class="form-control" name="listings[category]" required>
+                            <option value="Farm">Farm</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Room">Room</option>
+                            <option value="Arctic">Arctic</option>
+                            <option value="Camping">Camping</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <div class="imagebox">
+                            <img src="<%= modifiedUrl %>" alt="Listing Image">
+                        </div>
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" name="listings[image]">
+                    </div>
+                    <div class="row">
+                        <div class="mb-2 col-md-4">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" name="listings[location]"
+                                placeholder="Enter Location" value="<%=listing.location%>" required>
+                        </div>
+                        <div class="mb-2 col-md-8">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" class="form-control" name="listings[country]" placeholder="Enter Country"
+                                value="<%=listing.country%>" required>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-2">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control" name="listings[price]" placeholder="Enter Price"
+                            value="<%=listing.price%>" required>
+                    </div>
+
+                    <button class="btn btn-success list-btn my-2">Edit Listing</button>
+                </form>
+            </div>
+        </div>
+
+    </body>
