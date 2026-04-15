@@ -1,0 +1,13 @@
+services:
+    postgres:
+        image: postgres:18.3
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_DB: book-store
+            POSTGRES_USER: dheeraj
+            POSTGRES_PASSWORD: admin
+        volumes:
+            - db_data:/var/lib/postgres/data
+volumes:
+    db_data:
